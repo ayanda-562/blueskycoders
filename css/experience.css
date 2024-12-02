@@ -1,0 +1,243 @@
+:root {
+    --primary: #2a2a72;
+    --secondary: #009ffd;
+    --light: #f5f5f5;
+    --dark: #1a1a1a;
+  }
+
+  .timeline-container {
+    max-width: 1200px;
+  }
+  
+  .timeline {
+    position: relative;
+    padding: 2rem 0;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: var(--primary);
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 2px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    margin-bottom: 4rem;
+    position: relative;
+  }
+
+  .client-logo {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.5rem;
+    /* fill: #38bdf8;
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3)); */
+}
+
+.client-logo-2 {
+    height: 80px;
+    margin-bottom: 1.5rem;
+    /* fill: #38bdf8;
+    filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.3)); */
+}
+  
+  .timeline-content {
+    position: relative;
+    width: calc(50% - 3rem);
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-content {
+    left: 50%;
+    margin-left: 3rem;
+  }
+  
+  .timeline-item:nth-child(even) .timeline-content {
+    left: 0;
+  }
+  
+  .timeline-dot {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background: var(--secondary);
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 2rem;
+    border: 4px solid var(--primary);
+    z-index: 1;
+  }
+  
+  .timeline-date {
+    position: absolute;
+    top: 0;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    background: var(--light);
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  
+  .timeline-item:nth-child(odd) .timeline-date {
+    right: calc(50% + 3rem);
+  }
+  
+  .timeline-item:nth-child(even) .timeline-date {
+    left: calc(50% + 3rem);
+  }
+  
+  .company {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+  }
+  
+  .role {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+  }
+  
+  .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .tech-tag {
+    padding: 0.3rem 0.8rem;
+    background: var(--light);
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .achievements {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+  }
+  
+  .achievements li {
+    margin-bottom: 0.5rem;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .timeline-item {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  @media (max-width: 1024px) {
+    .timeline-container {
+      padding: 1rem;
+    }
+    
+    .company {
+      font-size: 1.2rem;
+    }
+    
+    .role {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 2rem;
+    }
+    
+    .timeline-content {
+      width: calc(100% - 4rem);
+      margin-left: 4rem !important;
+      left: 0 !important;
+    }
+    
+    .timeline-dot {
+      left: 2rem;
+    }
+    
+    .timeline-date {
+      position: relative;
+      left: 0 !important;
+      right: auto !important;
+      margin-bottom: 1rem;
+      display: inline-block;
+    }
+    
+    .timeline-container {
+      margin: 2rem auto;
+    }
+    
+    .timeline-content {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .timeline-container {
+      padding: 0.5rem;
+    }
+    
+    .timeline-content {
+      width: calc(100% - 3rem);
+      margin-left: 3rem !important;
+      padding: 1rem;
+    }
+    
+    .timeline::before {
+      left: 1.5rem;
+    }
+    
+    .timeline-dot {
+      left: 1.5rem;
+      width: 20px;
+      height: 20px;
+    }
+    
+    .company {
+      font-size: 1.1rem;
+    }
+    
+    .role {
+      font-size: 0.9rem;
+    }
+    
+    .tech-tag {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+    }
+    
+    .achievements li {
+      font-size: 0.9rem;
+    }
+  }
